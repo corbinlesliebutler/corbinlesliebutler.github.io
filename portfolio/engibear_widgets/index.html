@@ -1,0 +1,92 @@
+<html>
+  <head>
+	<style>
+	body 
+	{
+	}
+	
+	#canvas
+	{
+		background-color:#c439e2;
+		margin:auto;
+	}
+	  
+	#wrapper
+	{
+		width:100%;
+		height:100%;
+		text-align:center;
+	}
+	@font-face 
+	{
+		font-family: BACKISSUES;
+		src: url(common_assets/fonts/BackIssuesBB_reg.ttf);
+	}
+	</style>
+    <!-- <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script> -->
+	<script src="lib/easeljs.min.js"></script>
+	<script src="lib/preloadjs.min.js"></script>
+	<script src="lib/soundjs.min.js"></script>
+	<script src="lib/TimelineMax.min.js"></script>
+	<script src="lib/TweenMax.min.js"></script>
+	<!-- <script src="lib/jquery-3.3.1.js"></script> -->
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script> -->
+	<script>
+	//get widget from url
+	var $_GET = {};
+	if(document.location.toString().indexOf('?') !== -1) {
+		var query = document.location
+					   .toString()
+					   // get the query string
+					   .replace(/^.*?\?/, '')
+					   // and remove any existing hash string (thanks, @vrijdenker)
+					   .replace(/#.*$/, '')
+					   .split('&');
+
+		for(var i=0, l=query.length; i<l; i++) {
+		   var aux = decodeURIComponent(query[i]).split('=');
+		   $_GET[aux[0]] = aux[1];
+		}
+	}
+
+	var engibear = 
+	{
+		widget_src:$_GET['widget'],
+		manifest:[
+		{id: "bubble", src:"common_assets/img/bubble.png"},
+		{id: "ok_button", src:"common_assets/img/ok_button.png"},
+		{id: "replay_button", src:"common_assets/img/replay_button.png"},
+		{id: "finger", src:"common_assets/img/finger.png"},
+		{id: "ring", src:"common_assets/img/ring.png"},
+		{id: "books", src:"common_assets/img/books.png"},
+		{id: "engibear", src:"common_assets/img/engibear.png"},
+		{id: "engi_smile", src:"common_assets/img/engi_smile.jpg"},
+		{id: "engiblink", src:"common_assets/img/engiblink.png"},
+		{id: "shine_thick", src:"common_assets/img/shine_thick.png"}]
+	};
+	
+	if(engibear.widget_src == undefined)
+	{
+	 //engibear.widget_src = "engibears_bridge";
+	 engibear.widget_src = "engilinas_trains";
+	}
+	</script>
+	<script src = "common_js/common_util.js"></script>
+	<script src = "common_js/widget_shell.js"></script>
+	<script src = "common_js/shine.js"></script>
+	<script src = "common_js/ok_button.js"></script>
+	<script src = "common_js/bubble.js"></script>
+	<script src = "common_js/finger.js"></script>
+	<script src = "common_js/loading_screen.js"></script>
+	<script src = "common_js/books.js"></script>
+	<script src = "common_js/bear.js"></script>
+  </head>
+  <body onload="engibear.Init();">
+	<div id="wrapper">
+		<div id="canvasdiv">
+			<canvas id="canvas"></canvas>
+		</div>
+		<!-- <span style="font-family:'BACKISSUES'">Font load</span> -->
+	</div>
+  </body>
+</html>
