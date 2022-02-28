@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Art Gallery</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><style>
+			body {
+				font-family: Monospace;
+				background-color: #101010;
+				color: #fff;
+				margin: 0px;
+				overflow: hidden;
+			}
+			#info {
+				position: absolute;
+				padding: 10px;
+				width: 100%;
+				text-align: center;
+			}
+			.button{
+				background-color: #4CAF50;
+			    border: none;
+			    color: white;
+			    padding: 15px 32px;
+			    text-align: center;
+			    text-decoration: none;
+			    display: inline-block;
+			    font-size: 16px;
+			    margin: 0 auto;
+			    cursor: pointer;
+			}
+			#introPanel{
+			    text-align: center;
+			}
+			a {
+				color: #f00;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="js/three.min.js"></script>
+
+		<script src="js/WebVR.js"></script>
+
+		<script src="js/GLTFLoader.js"></script>
+
+		<script src="js/TweenMax.min.js"></script>
+
+		<script>
+		 gallery = {};
+		</script>
+		<script src="src/utils.js"></script>
+		<script src="src/Artwork.js"></script>
+		<script src="src/Room.js"></script>
+		<script src="src/gallery.js"></script>
+		<script>
+			gallery.application = new gallery.Application();
+		</script>
+	</body>
+</html>
