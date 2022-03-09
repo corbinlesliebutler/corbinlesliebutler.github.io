@@ -54,6 +54,18 @@
 		<script src="src/Room.js"></script>
 		<script src="src/gallery.js"></script>
 		<script>
+		navigator.xr.requestDevice = navigator.xr.requestDevice || function () {
+  return new Promise((resolve, reject) => {
+    resolve({
+      supportsSession: new Promise((resolve, reject) => {
+        resolve({
+          immersive: true,
+          exclusive: true
+        });
+      })
+    });
+  });
+};
 			gallery.application = new gallery.Application();
 		</script>
 	</body>

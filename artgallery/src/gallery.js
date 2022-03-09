@@ -5,20 +5,9 @@ const MOUSE_PUSH_BORDER = 0.2;
 const MOUSE_PAN_SPEED = 0.005;
 const MOUSE_PAN_FRICTION = 0.1;
 (function (){
-	navigator.xr.requestDevice = navigator.xr.requestDevice || function () {
-  return new Promise((resolve, reject) => {
-    resolve({
-      supportsSession: new Promise((resolve, reject) => {
-        resolve({
-          immersive: true,
-          exclusive: true
-        });
-      })
-    });
-  });
-};
 
 	gallery.Application = function(){
+		
 		var clock = new THREE.Clock();
 		var container;
 		var camera, scene, renderer;
