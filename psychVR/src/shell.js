@@ -24,10 +24,9 @@ function init()
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
 
-	//mouse and camera
+	//mouse
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 	raycaster = new THREE.Raycaster();
-	camera.position.z = 5;
 
 	//VR
 	document.body.appendChild( VRButton.createButton( renderer ) );
@@ -52,7 +51,7 @@ function render(){
 	{
 		//create image
 		var img = new PsychImage('src/img/shrek.png');
-		img.mesh.position.set(-5+Math.random()*10, -5+Math.random()*10, 0);
+		img.mesh.position.set(-5+Math.random()*10, -5+Math.random()*10, -5);
 		scene.add( img.mesh );
 		imgArr.push(img);
 	}
@@ -82,7 +81,7 @@ function render(){
 			}
 		}
 	}*/
-	if(true)
+	if(inVR)
 	{
 		//check head dir for imgs
 		for(let i = 0; i < imgArr.length; i++)
