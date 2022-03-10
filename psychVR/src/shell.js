@@ -88,7 +88,7 @@ function render(){
 		{
 			var img = imgArr[i];
 			var imgPos = img.mesh.position.clone().project(camera);
-			imgPos.z = 0;
+			//imgPos.z = 0;
 			if(imgPos.length() < 0.2)
 			{
 				img.mesh.rotation.z += 0.01;
